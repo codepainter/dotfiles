@@ -9,23 +9,47 @@ source .cisupport/is_ci.sh
 # TODO: remove me when a better solution is avail.
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
+# Core
 brew cask install \
-    1password \
-    arq \
-    bartender \
-    carbon-copy-cloner \
-    cd-to \
-    dropbox \
-    nvalt \
-    paw \
+    iterm2 \
+    menumeters \
+    mounty \
+    qsync-client \
+    rsyncosx \
+    spotify \
+    the-unarchiver \
+    unified-remote \
+
+# Install chat and stuff
+brew cask install \
     slack \
-    spectacle \
-    wireshark \
-    keycastr \
-    karabiner-elements \
-    hammerspoon \
-    tunnelblick \
-    p4v
+    discord \
+    telegram-desktop \
+    whatsapp \
+
+# Browsers & downloaders
+brew cask install \
+    firefox \
+    google-chrome \
+    jdownloader \
+    megasync \
+    qbittorrent \
+    send-anywhere \
+
+# Development
+brew cask install \
+    gitkraken \
+    google-cloud-sdk \
+    postman \
+    adoptopenjdk8 \
+    robo-3t \
+    sublime-text \
+    visual-studio-code \
+
+# Others
+brew cask install \
+    renpy \
+    steam \
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config

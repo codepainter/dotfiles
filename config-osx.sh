@@ -80,8 +80,8 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ###############################################################################
 
 # Save screenshots to the downloads folder
-mkdir ~/Desktop/Screenshots
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
+[ -d ~/Pictures/Screenshots ] || mkdir ~/Pictures/Screenshots
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -96,10 +96,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Finder                                                                      #
 ###############################################################################
 
-
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
-
 
 # Finder: show hidden files by default
 defaults write com.apple.Finder AppleShowAllFiles -bool true
@@ -320,7 +318,7 @@ defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.pl
 ###############################################################################
 
  for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer"; \
- 	do 
+ 	do
  	killall "${app}" > /dev/null 2>&1
  done
 

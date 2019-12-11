@@ -22,7 +22,7 @@ fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Bypass upstream xattr issues with quarantine and latest OS X versions.  specifically, quicklook-csv cask install failed
-# TODO: remove me when a better solution is avail.  
+# TODO: remove me when a better solution is avail.
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
 brew update; brew cask upgrade; brew cleanup
@@ -35,7 +35,7 @@ tap "tenzer/tap"
 tap "homebrew/cask"
 brew "git"
 brew "ruby"
-brew "go"   
+brew "go"
 brew "python"
 brew "jq"
 brew "ansible"
@@ -77,21 +77,22 @@ is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
-    java \
-    visual-studio-code 
+    # java \
+    adoptopenjdk8 \
+    visual-studio-code
 
-set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
+# set +e # give virtualbox install a pass on github action CI   Fails for because the security panel is not openable from CI
 
-if [[ $(brew cask install virtualbox) ]] ; then
-    echo VirtualBox installed.
-else
-    echo VirtualBox install second attempt. 
-    echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
-    read -p "Do you wish to resume install (y/n)?" yn
+# if [[ $(brew cask install virtualbox) ]] ; then
+#     echo VirtualBox installed.
+# else
+#     echo VirtualBox install second attempt.
+#     echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
+#     read -p "Do you wish to resume install (y/n)?" yn
 
-    echo "Attempting to install virtualbox"
-    brew cask install virtualbox
-fi
+#     echo "Attempting to install virtualbox"
+#     brew cask install virtualbox
+# fi
 
 set -e
 
@@ -99,7 +100,7 @@ set -e
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
 code --install-extension lunaryorn.fish-ide
-code --install-extension ms-azuretools.vscode-docker 
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
