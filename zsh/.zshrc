@@ -80,17 +80,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='subl'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 #
-
-    eval "$(nodenv init -)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -187,3 +185,9 @@ source $ZSH/oh-my-zsh.sh
         #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
         echo
     }
+
+    eval "$(nodenv init -)"
+    eval "$(goenv init -)"
+    if command -v pyenv 1>/dev/null 2>&1; then
+      eval "$(pyenv init -)"
+    fi

@@ -40,20 +40,35 @@ brew "git"
 brew "goenv"
 brew "pyenv"
 brew "awscli"
+brew "zip"
 EOS
 
+# nodenv installs
+nodenv install 8.16.2
+nodenv install 9.11.2
+nodenv install 10.17.0
+nodenv install 11.15.0
+nodenv install 12.13.1
+
+# pyenv installs
+pyenv install 3.8.0
+pyenv install 2.7.17
+
+# goenv installs
+goenv install 1.11.4
+goenv install 1.10.7
+goenv install 1.9.7
 
 # brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
-# install fish shell
+# install other shells
 brew bundle --file=- <<-EOS
 brew "bash"
 brew "zsh"
 EOS
 
 ## use zshrc from ~/dotfiles/zsh/.zshrc
-[ -f ~/.zshrc ] && rm ~/.zshrc
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+[ -f ~/.zshrc ] && rm ~/.zshrc && ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
 # echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 # is_ci || sudo -v
@@ -85,7 +100,7 @@ brew cask install \
 #     brew cask install virtualbox
 # fi
 
-set -e
+# set -e
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
@@ -98,33 +113,33 @@ ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Applicat
 
 # only installed when osx, so not in the base template
 git config --global core.editor "code -w -n"
-git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
-git config --global pull.rebase true
-git config --global rebase.autoStash true
+# git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
+# git config --global pull.rebase true
+# git config --global rebase.autoStash true
 
-git config --global difftool.prompt false
-git config --global merge.tool p4mergetool
-git config --global mergetool.p4mergetool.cmd "/usr/local/bin/p4merge \$PWD/\$BASE \$PWD/\$LOCAL \$PWD/\$REMOTE \$PWD/\$MERGED"
-git config --global mergetool.p4mergetool.trustExitCode false
-git config --global mergetool.keepBackup false
+# git config --global difftool.prompt false
+# git config --global merge.tool p4mergetool
+# git config --global mergetool.p4mergetool.cmd "/usr/local/bin/p4merge \$PWD/\$BASE \$PWD/\$LOCAL \$PWD/\$REMOTE \$PWD/\$MERGED"
+# git config --global mergetool.p4mergetool.trustExitCode false
+# git config --global mergetool.keepBackup false
 
-git config --global diff.tool p4mergetool
-git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
-git config --global difftool.p4mergetool.prompt false
+# git config --global diff.tool p4mergetool
+# git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
+# git config --global difftool.p4mergetool.prompt false
 
 cd src/listrepo
 ./build.sh
 cd ../../
 
-echo '1. Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa'
-echo '2. Then git config --global user.name "Your Name"'
-echo '3. Then git config --global user.email "Your_Email@...com"'
-echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
-echo '5. Configure dropbox accounts'
-echo '6. Configure Slack accounts'
-echo '7. Configure nvalt storage backend /Dropbox/Notes'
-echo '8. Install Air Mail from App Store and configure accounts'
-echo '9. Add Bartender license, configure bartender'
+echo '1.  Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa'
+echo '2.  Then git config --global user.name "Your Name"'
+echo '3.  Then git config --global user.email "Your_Email@...com"'
+echo '4.  Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
+echo '5.  Configure dropbox accounts'
+echo '6.  Configure Slack accounts'
+echo '7.  Configure nvalt storage backend /Dropbox/Notes'
+echo '8.  Install Air Mail from App Store and configure accounts'
+echo '9.  Add Bartender license, configure bartender'
 echo '10. Configure 1Password vaults'
 echo '11. Install IDEs'
 echo '12. Add cdto to finder toolbar:   Drag Applications/cd to.app onto the Finder toolbar while holding down the command(⌘) and option(⌥) keys'
