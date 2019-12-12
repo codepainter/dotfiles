@@ -34,6 +34,7 @@ brew cask install \
     jdownloader \
     megasync \
     qbittorrent \
+    google-backup-and-sync \
     send-anywhere
 
 # Others
