@@ -31,49 +31,40 @@ echo Effective Homebrew version:
 brew --version
 
 brew bundle --file=- <<-EOS
-tap "tenzer/tap"
+tap "beeftornado/rmtree"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
+tap "mongodb/brew"
 brew "git"
-brew "ruby"
-brew "go"
-brew "python"
-brew "jq"
-brew "ansible"
+brew "goenv"
+brew "pyenv"
 brew "awscli"
-brew "csshX"
-brew "hub"
-brew "diff-so-fancy"
-brew "packer"
-brew "terraform"
-brew "vault"
-brew "fzf"
-brew "parallel"
-brew "telnet"
-brew "netcat"
-brew "Tenzer/tap/multitime"
-brew "ripgrep"
-brew "exa"
 EOS
 
 
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+# brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
 brew bundle --file=- <<-EOS
-brew "fish"
 brew "bash"
+brew "zsh"
 EOS
 
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-is_ci || sudo -v
-is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
+## use zshrc from ~/dotfiles/zsh/.zshrc
+[ -f ~/.zshrc ] && rm ~/.zshrc
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+
+# echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+# is_ci || sudo -v
+# is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-is_azure_devops || fish -c "fisher add barnybug/docker-fish-completion"
-is_azure_devops || fish -c "fisher add ansible-completion"
-is_azure_devops || fish -c "fisher add jethrokuan/fzf"
-is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
+# curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+# is_azure_devops || fish -c "fisher add barnybug/docker-fish-completion"
+# is_azure_devops || fish -c "fisher add ansible-completion"
+# is_azure_devops || fish -c "fisher add jethrokuan/fzf"
+# is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
