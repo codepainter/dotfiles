@@ -18,14 +18,14 @@ brew cask install \
     rsyncosx \
     spotify \
     the-unarchiver \
-    unified-remote \
+    unified-remote
 
 # Install chat and stuff
 brew cask install \
     slack \
     discord \
     telegram-desktop \
-    whatsapp \
+    whatsapp
 
 # Browsers & downloaders
 brew cask install \
@@ -34,39 +34,29 @@ brew cask install \
     jdownloader \
     megasync \
     qbittorrent \
-    send-anywhere \
-
-# Development
-brew cask install \
-    gitkraken \
-    google-cloud-sdk \
-    postman \
-    adoptopenjdk8 \
-    robo-3t \
-    sublime-text \
-    visual-studio-code \
+    send-anywhere
 
 # Others
 brew cask install \
     renpy \
-    steam \
+    steam
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
-ln -sf $(pwd)/karabiner $HOME/.config
+# ln -sf $(pwd)/karabiner $HOME/.config
 
 # force reload after symlink creation
-is_ci || launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+# is_ci || launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
 
-ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
+# ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
 # Yah . . . this works, svn download a sub-dir of a github repo to a dest dir
-svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
+# svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
 
-is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
-is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
-is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
+# is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
+# is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
+# is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
 
 # Turn off Hammerspoon dock icon
-defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
-killall Hammerspoon || true
-open /Applications/Hammerspoon.app
+# defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
+# killall Hammerspoon || true
+# open /Applications/Hammerspoon.app

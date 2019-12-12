@@ -40,7 +40,13 @@ brew "git"
 brew "goenv"
 brew "pyenv"
 brew "awscli"
+brew "yarn"
 brew "zip"
+brew "nnn"
+brew "curl"
+brew "mongodb-community@4.2"
+brew "elasticsearch"
+brew "redis"
 EOS
 
 # nodenv installs
@@ -58,6 +64,12 @@ pyenv install 2.7.17
 goenv install 1.11.4
 goenv install 1.10.7
 goenv install 1.9.7
+
+brew bundle --file=- <<-EOS
+brew "mongodb-community@4.2"
+brew "elasticsearch"
+brew "redis"
+EOS
 
 # brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
@@ -86,6 +98,12 @@ brew cask install \
     # java \
     adoptopenjdk8 \
     visual-studio-code
+    gitkraken \
+    google-cloud-sdk \
+    postman \
+    adoptopenjdk8 \
+    robo-3t \
+    sublime-text
 
 # set +e # give virtualbox install a pass on github action CI   Fails for because the security panel is not openable from CI
 
