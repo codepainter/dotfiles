@@ -13,8 +13,8 @@ main () {
         "$ROOT/config-git.sh"
         "$ROOT/install-osx-desktop-apps.sh"
         "$ROOT/symlink-osx-dev-apps.sh"
-    elif [[ $(uname -s) == "Linux" ]]; then
-        "$ROOT/install-linux.sh"
+    # elif [[ $(uname -s) == "Linux" ]]; then
+    #     "$ROOT/install-linux.sh"
     fi
 
 }
