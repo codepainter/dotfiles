@@ -98,9 +98,8 @@ EOS
 # is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
-  docker
-# java \
-adoptopenjdk8 \
+  docker \
+  adoptopenjdk8 \
   visual-studio-code \
   gitkraken \
   google-cloud-sdk \
