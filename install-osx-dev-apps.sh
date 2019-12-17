@@ -97,7 +97,7 @@ brew cask install \
     docker \
     # java \
     adoptopenjdk8 \
-    visual-studio-code
+    visual-studio-code \
     gitkraken \
     google-cloud-sdk \
     postman \
@@ -123,9 +123,37 @@ brew cask install \
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
-code --install-extension lunaryorn.fish-ide
+# code --install-extension lunaryorn.fish-ide
+code --install-extension amazonwebservices.aws-toolkit-vscode
+code --install-extension ms-azuretools.vscode-cosmosdb
+code --install-extension wwm.better-align
+code --install-extension aaron-bond.better-comments
+code --install-extension alefragnani.bookmarks
+code --install-extension coenraads.bracket-pair-colorizer-2
+code --install-extension googlecloudtools.cloudcode
+code --install-extension mikestead.dotenv
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension skyapps.fish-vscode
+code --install-extension fatihacet.gitlab-workflow
+code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.go
+code --install-extension xabikos.javascriptsnippets
+code --install-extension orta.vscode-jest
+code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension shanoor.vscode-nginx
+code --install-extension waderyan.nodejs-extension-pack
+code --install-extension eg2.vscode-npm-script
+code --install-extension howardzuo.vscode-npm-dependency
+code --install-extension christian-kohler.npm-intellisense
 code --install-extension ms-azuretools.vscode-docker
-code --install-extension haaaad.ansible
+code --install-extension christian-kohler.path-intellisense
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-python.python
+code --install-extension jasonnutter.search-node-modules
+code --install-extension gruntfuggly.todo-tree
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension gamunu.vscode-yarn
+# code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
