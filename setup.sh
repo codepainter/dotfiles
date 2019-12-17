@@ -4,7 +4,7 @@ source .cisupport/is_ci.sh
 
 set -e
 
-main () {
+main() {
     "$ROOT/symlink-common.sh"
 
     if [[ $(uname -s) == "Darwin" ]]; then

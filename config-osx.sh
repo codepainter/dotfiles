@@ -6,7 +6,11 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -45,7 +49,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -297,7 +301,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-
 ##########
 # Spaces #
 ##########
@@ -308,7 +311,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # instead of sliding entire screen left/right, cross-fade... less jarring
 defaults write com.apple.universalaccess reduceMotion -bool true
 
-
 # App->Space stickyness
 # re-export text plist with `defaults read ~/Library/Preferences/com.apple.spaces.plist > osx/spaces.plist`
 defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.plist
@@ -317,10 +319,9 @@ defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.pl
 # Kill affected applications                                                  #
 ###############################################################################
 
- for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer"; \
- 	do
- 	killall "${app}" > /dev/null 2>&1
- done
+for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer"; do
+	killall "${app}" >/dev/null 2>&1
+done
 
 # Default Terminal Theme
 defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" Homebrew
@@ -343,4 +344,3 @@ killAll ControlStrip
 # killAll ControlStrip
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-

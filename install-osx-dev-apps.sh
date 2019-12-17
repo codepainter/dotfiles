@@ -12,12 +12,12 @@ else
   $(xcode-select --install)
 fi
 
-if [[ $(brew --version) ]] ; then
-    echo "Attempting to update Homebrew"
-    brew update
+if [[ $(brew --version) ]]; then
+  echo "Attempting to update Homebrew"
+  brew update
 else
-    echo "Attempting to install Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "Attempting to install Homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -25,7 +25,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # TODO: remove me when a better solution is avail.
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
-brew update; brew cask upgrade; brew cleanup
+brew update
+brew cask upgrade
+brew cleanup
 
 echo Effective Homebrew version:
 brew --version
@@ -55,18 +57,20 @@ nodenv install 9.11.2
 nodenv install 10.17.0
 nodenv install 11.15.0
 nodenv install 12.13.1
+nodenv install 13.2.0
 
 # pyenv installs
-pyenv install 3.8.0
 pyenv install 2.7.17
+pyenv install 3.8.0
 
 # goenv installs
-goenv install 1.11.4
-goenv install 1.10.7
 goenv install 1.9.7
+goenv install 1.10.7
+goenv install 1.11.4
 
+# mongodb, elasticsearch, redis
 brew bundle --file=- <<-EOS
-brew "mongodb-community@4.2"
+brew "mongodb-community"
 brew "elasticsearch"
 brew "redis"
 EOS
@@ -94,16 +98,16 @@ EOS
 # is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
-    docker \
-    # java \
-    adoptopenjdk8 \
-    visual-studio-code \
-    gitkraken \
-    google-cloud-sdk \
-    postman \
-    adoptopenjdk8 \
-    robo-3t \
-    sublime-text
+  docker
+# java \
+adoptopenjdk8 \
+  visual-studio-code \
+  gitkraken \
+  google-cloud-sdk \
+  postman \
+  adoptopenjdk8 \
+  robo-3t \
+  sublime-text
 
 # set +e # give virtualbox install a pass on github action CI   Fails for because the security panel is not openable from CI
 
@@ -150,6 +154,7 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension esbenp.prettier-vscode
 code --install-extension ms-python.python
 code --install-extension jasonnutter.search-node-modules
+code --install-extension foxundermoon.shell-format
 code --install-extension gruntfuggly.todo-tree
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension gamunu.vscode-yarn
