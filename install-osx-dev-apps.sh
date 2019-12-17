@@ -46,29 +46,29 @@ brew "yarn"
 brew "zip"
 brew "nnn"
 brew "curl"
-brew "mongodb-community@4.2"
+brew "mongodb-community"
 brew "elasticsearch"
 brew "redis"
 EOS
 
-# nodenv installs
-nodenv install 8.16.2
-nodenv install 9.11.2
-nodenv install 10.17.0
-nodenv install 11.15.0
-nodenv install 12.13.1
-nodenv install 13.2.0
+echo Installing Node:
+nodenv install 8.16.2 --skip-existing
+nodenv install 9.11.2 --skip-existing
+nodenv install 10.17.0 --skip-existing
+nodenv install 11.15.0 --skip-existing
+nodenv install 12.13.1 --skip-existing
+nodenv install 13.2.0 --skip-existing
 
-# pyenv installs
-pyenv install 2.7.17
-pyenv install 3.8.0
+echo Installing Python:
+pyenv install 2.7.17 --skip-existing
+pyenv install 3.8.0 --skip-existing
 
-# goenv installs
-goenv install 1.9.7
-goenv install 1.10.7
-goenv install 1.11.4
+echo Installing Go:
+goenv install 1.9.7 --skip-existing
+goenv install 1.10.7 --skip-existing
+goenv install 1.11.4 --skip-existing
 
-# mongodb, elasticsearch, redis
+echo Installing storages:
 brew bundle --file=- <<-EOS
 brew "mongodb-community"
 brew "elasticsearch"
@@ -77,14 +77,11 @@ EOS
 
 # brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
-# install other shells
+echo Installing other shells:
 brew bundle --file=- <<-EOS
 brew "bash"
 brew "zsh"
 EOS
-
-## use zshrc from ~/dotfiles/zsh/.zshrc
-[ -f ~/.zshrc ] && rm ~/.zshrc && ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
 # echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 # is_ci || sudo -v
@@ -97,6 +94,7 @@ EOS
 # is_azure_devops || fish -c "fisher add jethrokuan/fzf"
 # is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
+echo Installing Development Casks:
 brew cask install \
   docker \
   adoptopenjdk8 \
@@ -104,7 +102,6 @@ brew cask install \
   gitkraken \
   google-cloud-sdk \
   postman \
-  adoptopenjdk8 \
   robo-3t \
   sublime-text
 
@@ -126,6 +123,7 @@ brew cask install \
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
+echo Installing VSCode extensions:
 # code --install-extension lunaryorn.fish-ide
 code --install-extension amazonwebservices.aws-toolkit-vscode
 code --install-extension ms-azuretools.vscode-cosmosdb
@@ -159,7 +157,7 @@ code --install-extension vscode-icons-team.vscode-icons
 code --install-extension gamunu.vscode-yarn
 # code --install-extension haaaad.ansible
 
-ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # only installed when osx, so not in the base template
 git config --global core.editor "code -w -n"
@@ -176,6 +174,10 @@ git config --global core.editor "code -w -n"
 # git config --global diff.tool p4mergetool
 # git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
 # git config --global difftool.p4mergetool.prompt false
+
+## install .zshrc
+ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+source ~/.zshrc
 
 cd src/listrepo
 ./build.sh
