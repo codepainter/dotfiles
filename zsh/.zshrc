@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/user/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
+    export EDITOR='nano'
 else
     export EDITOR='subl'
 fi
@@ -104,26 +104,26 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 alias sz="source ~/.zshrc"
 alias shutdown='sudo shutdown -h now'
 
-alias cp='cp -iv'                # Preferred 'cp' implementation
-alias mv='mv -iv'                # Preferred 'mv' implementation
-alias mkdir='mkdir -pv'          # Preferred 'mkdir' implementation
-alias ll='ls -FGlAhp'            # Preferred 'ls' implementation
-alias llt='ll -t'                # Preferred 'll -t' implementation
-alias lltr='ll -tr'              # Preferred 'll -tr' implementation
-alias less='less -FSRXc'         # Preferred 'less' implementation
+alias cp='cp -iv'                         # Preferred 'cp' implementation
+alias mv='mv -iv'                         # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                   # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'                     # Preferred 'ls' implementation
+alias llt='ll -t'                         # Preferred 'll -t' implementation
+alias lltr='ll -tr'                       # Preferred 'll -tr' implementation
+alias less='less -FSRXc'                  # Preferred 'less' implementation
 cd() {
     builtin cd "$@"
     ll
 } # Always list directory contents upon 'cd'
-alias cd..='cd ../'              # Go back 1 directory level (for fast typers)
-alias ..='cd ../'                # Go back 1 directory level
-alias ...='cd ../../'            # Go back 2 directory levels
-alias .3='cd ../../../'          # Go back 3 directory levels
-alias .4='cd ../../../../'       # Go back 4 directory levels
-alias .5='cd ../../../../../'    # Go back 5 directory levels
-alias .6='cd ../../../../../../' # Go back 6 directory levels
-alias edit='subl'                # edit:         Opens any file in sublime editor
-alias sublime='subl'
+alias cd..='cd ../'                       # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                         # Go back 1 directory level
+alias ...='cd ../../'                     # Go back 2 directory levels
+alias .3='cd ../../../'                   # Go back 3 directory levels
+alias .4='cd ../../../../'                # Go back 4 directory levels
+alias .5='cd ../../../../../'             # Go back 5 directory levels
+alias .6='cd ../../../../../../'          # Go back 6 directory levels
+alias edit='subl'                         # edit:         Opens any file in sublime editor
+alias sublime='subl'                      # sublime alias
 alias f='open -a Finder ./'               # f:            Opens current directory in MacOS Finder
 alias ~="cd ~"                            # ~:            Go Home
 alias c='clear'                           # c:            Clear terminal display
