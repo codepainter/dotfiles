@@ -9,6 +9,7 @@
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontSize": 12,
+  "editor.minimap.enabled": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "editor.minimap.renderCharacters": false,

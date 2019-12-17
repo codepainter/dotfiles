@@ -9,7 +9,7 @@ source .cisupport/is_ci.sh
 # TODO: remove me when a better solution is avail.
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
-# Core
+echo Installing core apps:
 brew cask install \
     iterm2 \
     menumeters \
@@ -20,14 +20,14 @@ brew cask install \
     the-unarchiver \
     unified-remote
 
-# Install chat and stuff
+echo Installing chat apps:
 brew cask install \
     slack \
     discord \
     telegram-desktop \
     whatsapp
 
-# Browsers & downloaders
+echo Installing browser and downloaders:
 brew cask install \
     firefox \
     google-chrome \
@@ -37,7 +37,7 @@ brew cask install \
     google-backup-and-sync \
     send-anywhere
 
-# Others
+echo Installing other apps:
 brew cask install \
     renpy \
     steam

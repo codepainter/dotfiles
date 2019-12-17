@@ -67,6 +67,7 @@ echo Installing Go:
 goenv install 1.9.7 --skip-existing
 goenv install 1.10.7 --skip-existing
 goenv install 1.11.4 --skip-existing
+goenv global 1.11.4
 
 echo Installing storages:
 brew bundle --file=- <<-EOS
@@ -174,10 +175,6 @@ git config --global core.editor "code -w -n"
 # git config --global diff.tool p4mergetool
 # git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
 # git config --global difftool.p4mergetool.prompt false
-
-## install .zshrc
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-source ~/.zshrc
 
 cd src/listrepo
 ./build.sh
