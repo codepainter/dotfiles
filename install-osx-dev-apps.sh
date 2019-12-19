@@ -160,6 +160,7 @@ code --install-extension gamunu.vscode-yarn
 # code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf $(pwd)/prefs/visual-studio-code/.prettierrc "$HOME/.prettierrc"
 
 # only installed when osx, so not in the base template
 git config --global core.editor "code -w -n"
