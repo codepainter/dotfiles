@@ -1,7 +1,14 @@
 #!/usr/bin/env zsh
 
-## install .zshrc
+## install zsh and ohmyzsh
+echo removing previous ohmyzsh installation
 rm -rf "$HOME/.oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-source ~/.zshrc
+rm "$HOME/.zshrc"
+echo Installing oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+## user dotfiles .zshrc
+echo Linking dotfiles/zsh/.zshrc
+ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+echo Sourcing .zshrc
+source "$HOME/.zshrc"
