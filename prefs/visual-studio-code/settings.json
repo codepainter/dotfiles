@@ -6,18 +6,25 @@
     "comment": 2
   },
   "breadcrumbs.enabled": true,
+
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontSize": 12,
   "editor.minimap.enabled": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
+
   "editor.minimap.renderCharacters": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.showSlider": "always",
   "editor.smoothScrolling": true,
+  // "minimap.errorHighlight":true,
+  // "minimap.warningHighlight":true,
+
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+
   "window.newWindowDimensions": "inherit",
   "window.nativeTabs": false,
   "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
@@ -25,6 +32,7 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.feedback.visible": false,
+
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
