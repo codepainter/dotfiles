@@ -52,6 +52,7 @@ brew "mongodb-community"
 brew "elasticsearch"
 brew "redis"
 brew "heroku"
+brew "doctl"
 EOS
 
 echo Installing Node:
