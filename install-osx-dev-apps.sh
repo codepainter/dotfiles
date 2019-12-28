@@ -38,6 +38,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "mongodb/brew"
+tap "heroku/brew"
 brew "git"
 brew "goenv"
 brew "pyenv"
@@ -50,6 +51,7 @@ brew "curl"
 brew "mongodb-community"
 brew "elasticsearch"
 brew "redis"
+brew "heroku"
 EOS
 
 echo Installing Node:
