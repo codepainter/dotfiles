@@ -99,8 +99,8 @@ fi
 #   2. MAKE TERMINAL BETTER
 #   -----------------------------
 
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias dotfiles="code ~/dotfiles"
+alias ohmyzsh="code ~/.oh-my-zsh"
 alias sz="source ~/.zshrc"
 alias shutdown='sudo shutdown -h now'
 
@@ -140,7 +140,7 @@ alias burp='brewUpdate'
 ziptocbz() {
     for i in */; do
         zip -r "${i%/}.cbz" "$i"
-        rm -rf "$i"
+        # rm -rf "$i"
     done
 }
 
