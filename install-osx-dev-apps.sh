@@ -40,6 +40,7 @@ tap "homebrew/cask-versions"
 tap "mongodb/brew"
 tap "heroku/brew"
 brew "git"
+brew "hub"
 brew "goenv"
 brew "pyenv"
 brew "nodenv"
@@ -57,6 +58,7 @@ brew "tldr"
 brew "terraform"
 EOS
 
+eval "$(nodenv init -)"
 echo Installing Node:
 nodenv install 8.16.2 --skip-existing
 nodenv install 9.11.2 --skip-existing
@@ -65,10 +67,12 @@ nodenv install 11.15.0 --skip-existing
 nodenv install 12.13.1 --skip-existing
 nodenv install 13.2.0 --skip-existing
 
+eval "$(pyenv init -)"
 echo Installing Python:
 pyenv install 2.7.17 --skip-existing
 pyenv install 3.8.0 --skip-existing
 
+eval "$(goenv init -)"
 echo Installing Go:
 goenv install 1.9.7 --skip-existing
 goenv install 1.10.7 --skip-existing
