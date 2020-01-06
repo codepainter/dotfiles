@@ -53,6 +53,8 @@ brew "elasticsearch"
 brew "redis"
 brew "heroku"
 brew "doctl"
+brew "tldr"
+brew "terraform"
 EOS
 
 echo Installing Node:
