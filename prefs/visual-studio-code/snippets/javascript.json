@@ -4,7 +4,10 @@
         "body": [
             "export default function ${1:buildMakeFunction}({ ${2:dependency} }) {",
             "\treturn function ${3:makeFunction}({ ${4:id} } = {}) {",
+            "\t\t// VALIDATION",
             "\t\t$0",
+            "\t\t// SANITIZATION",
+            "\t\t",
             "\t\treturn Object.freeze({",
             "\t\t\tgetId: () => id",
             "\t\t});",
