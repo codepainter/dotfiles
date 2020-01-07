@@ -52,5 +52,10 @@
   "terraform.languageServer": {
     "enabled": true,
     "args": []
+  },
+  "git.autofetch": true,
+  "explorer.confirmDelete": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
