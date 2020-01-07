@@ -1,26 +1,31 @@
 {
-    "export default function": {
-        "prefix": "exbuild",
+    "export default buildMakeFunction": {
+        "prefix": "expmakebuild",
         "body": [
-            "export default function $1({  }) {",
-            "return function $2({",
-            "} = {}) {",
-            "return Object.freeze({",
-            "getId: () => id",
-            "});",
-            "};",
+            "export default function ${1:buildMakeFunction}({ ${2:dependency} }) {",
+            "\treturn function ${3:makeFunction}({ ${4:id} } = {}) {",
+            "\t\t$0",
+            "\t\treturn Object.freeze({",
+            "\t\t\tgetId: () => id",
+            "\t\t});",
+            "\t};",
             "}"
         ],
-        "description": "export default function"
+        "description": "export default buildMakeFunction"
     },
-    "const a = b": {
+    "const varName = value": {
         "prefix": "const",
-        "body": ["const $1 = $2;"],
-        "description": "const a = b"
+        "body": ["const ${1:varName} = ${2:value};"],
+        "description": "const varName = value"
     },
-    "let a = b": {
+    "let varName = value": {
         "prefix": "let",
-        "body": ["let $1 = $2;"],
-        "description": "let a = b"
+        "body": ["let ${1:varName} = ${2:value};"],
+        "description": "let varName = value"
+    },
+    "var varName = value": {
+        "prefix": "var",
+        "body": ["var ${1:varName} = ${2:value};"],
+        "description": "var varName = value"
     }
 }
