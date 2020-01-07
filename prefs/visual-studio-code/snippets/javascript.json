@@ -30,5 +30,10 @@
         "prefix": "var",
         "body": ["var ${1:varName} = ${2:value};"],
         "description": "var varName = value"
+    },
+    "throw new error": {
+        "prefix": "throw",
+        "body": ["throw new Error(${1:error})"],
+        "description": "throw new error"
     }
 }
