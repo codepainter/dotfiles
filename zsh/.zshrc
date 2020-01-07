@@ -139,8 +139,7 @@ alias burp='brewUpdate'
 
 ziptocbz() {
     for i in */; do
-        zip -r "${i%/}.cbz" "$i"
-        # rm -rf "$i"
+        zip -rmv "${i%/}.cbz" "$i"
     done
 }
 
