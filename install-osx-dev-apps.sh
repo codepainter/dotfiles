@@ -170,6 +170,7 @@ code --install-extension mauve.terraform
 # code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf $(pwd)/prefs/visual-studio-code/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
 ln -sf $(pwd)/prefs/visual-studio-code/snippets/javascript.json "$HOME/Library/Application Support/Code/User/snippets/javascript.json"
 ln -sf $(pwd)/prefs/visual-studio-code/.prettierrc "$HOME/.prettierrc"
 
