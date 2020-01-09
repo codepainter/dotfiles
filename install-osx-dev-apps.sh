@@ -167,6 +167,7 @@ code --install-extension gruntfuggly.todo-tree
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension gamunu.vscode-yarn
 code --install-extension mauve.terraform
+code --install-extension geddski.macros
 # code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
