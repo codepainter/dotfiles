@@ -1,7 +1,29 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "ctrl+alt+d",
-        "command": "wwm.aligncode"
-    }
+	{
+		"key"     : "ctrl+alt+d",
+		"command" : "wwm.aligncode"
+	},
+	{
+		"key"     : "shift+alt+f",
+		"command" : "editor.action.formatDocument.none",
+		"when"    : "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
+	},
+	{
+		"key"     : "ctrl+alt+f",
+		"command" : "-editor.action.formatDocument.none",
+		"when"    : "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
+	},
+	{
+		"key"     : "ctrl+a",
+		"command" : "macros.format"
+	},
+	{
+		"key"     : "ctrl+s",
+		"command" : "wwm.aligncode"
+	},
+	{
+		"key"     : "ctrl+d",
+		"command" : "workbench.action.files.save"
+	}
 ]

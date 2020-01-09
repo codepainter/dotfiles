@@ -1,62 +1,65 @@
 {
-	// "alignment.surroundSpace": {
-	//     "colon": [1, 1],
-	//     "assignment": [1, 1],
-	//     "arrow": [1, 1],
-	//     "comment": 2
-	// },
-	"breadcrumbs.enabled": true,
+	"alignment.surroundSpace": {
+		"colon"      : [1, 1],
+		"assignment" : [1, 1],
+		"arrow"      : [1, 1],
+		"comment"    : 2
+	},
 
-	"editor.cursorBlinking": "phase",
-	"editor.cursorSmoothCaretAnimation": true,
-	"editor.fontSize": 12,
-	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled" : true,
 
-	"editor.minimap.renderCharacters": false,
-	"editor.minimap.maxColumn": 200,
-	"editor.minimap.showSlider": "always",
-	"editor.smoothScrolling": true,
+	"editor.cursorBlinking"             : "phase",
+	"editor.cursorSmoothCaretAnimation" : true,
+	"editor.fontSize"                   : 12,
+	"editor.minimap.enabled"            : false,
+
+	"editor.minimap.renderCharacters" : false,
+	"editor.minimap.maxColumn"        : 200,
+	"editor.minimap.showSlider"       : "always",
+	"editor.smoothScrolling"          : true,
 	// "minimap.errorHighlight":true,
 	// "minimap.warningHighlight":true,
 
-	"files.insertFinalNewline": true,
-	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline"     : true,
+	"files.trimTrailingWhitespace" : true,
 
-	"telemetry.enableCrashReporter": false,
-	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter" : false,
+	"telemetry.enableTelemetry"     : false,
 
-	"window.newWindowDimensions": "inherit",
-	"window.nativeTabs": false,
-	"window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-	"window.zoomLevel": 0,
-	"workbench.iconTheme": "vscode-icons",
-	"workbench.sideBar.location": "right",
-	"workbench.statusBar.feedback.visible": false,
+	"window.newWindowDimensions"           : "inherit",
+	"window.nativeTabs"                    : false,
+	"window.title"                         : "${dirty} ${activeEditorMedium}${separator}${rootName}",
+	"window.zoomLevel"                     : 0,
+	"workbench.iconTheme"                  : "vscode-icons",
+	"workbench.sideBar.location"           : "right",
+	"workbench.statusBar.feedback.visible" : false,
 
 	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter" : "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter" : "esbenp.prettier-vscode"
 	},
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"terraform.indexing": {
-		"enabled": false,
-		"liveIndexing": false,
-		"delay": 500,
-		"exclude": [".terraform/**/*", "**/.terraform/**/*"]
+	"javascript.updateImportsOnFileMove.enabled" : "always",
+	"terraform.indexing"                         : {
+		"enabled"      : false,
+		"liveIndexing" : false,
+		"delay"        : 500,
+		"exclude"      : [".terraform/**/*", "**/.terraform/**/*"]
 	},
 	"terraform.languageServer": {
-		"enabled": true,
-		"args": []
+		"enabled" : true,
+		"args"    : []
 	},
-	"git.autofetch": true,
-	"explorer.confirmDelete": false,
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"git.autofetch"          : true,
+	"explorer.confirmDelete" : false,
+	"[json]"                 : {
+		"editor.defaultFormatter" : "esbenp.prettier-vscode"
 	},
 	"[yaml]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter" : "esbenp.prettier-vscode"
 	},
-	"editor.formatOnSave": true
+	"macros": {
+		"format" : ["editor.action.formatDocument", "editor.action.selectAll", "wwm.aligncode"]
+	}
 }
