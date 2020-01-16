@@ -49,9 +49,6 @@ brew "yarn"
 brew "zip"
 brew "nnn"
 brew "curl"
-brew "mongodb-community"
-brew "elasticsearch"
-brew "redis"
 brew "heroku"
 brew "doctl"
 brew "tldr"
@@ -78,6 +75,8 @@ goenv install 1.9.7 --skip-existing
 goenv install 1.10.7 --skip-existing
 goenv install 1.11.4 --skip-existing
 goenv global 1.11.4
+
+brew cask install adoptopenjdk8
 
 echo Installing storages:
 brew bundle --file=- <<-EOS
