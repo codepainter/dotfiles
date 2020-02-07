@@ -68,7 +68,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow aws yarn npm web-search gcloud zsh_reload pyenv heroku docker docker-compose)
+plugins=(git git-flow aws yarn npm web-search gcloud zsh_reload pyenv heroku docker docker-compose redis-cli)
 
 source $ZSH/oh-my-zsh.sh
 
