@@ -199,3 +199,9 @@ eval "$(goenv init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
+
+#   ---------------------------
+#   6. DEVELOPMENT
+#   ---------------------------
+
+alias redmon='redis-cli monitor'                # showBlocked:  All ipfw rules inc/ blocked IPs
