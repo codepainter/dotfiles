@@ -38,29 +38,19 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "mongodb/brew"
-tap "heroku/brew"
 brew "git"
-brew "hub"
-brew "goenv"
 brew "pyenv"
 brew "nodenv"
-brew "awscli"
 brew "yarn"
 brew "zip"
-brew "nnn"
 brew "curl"
-brew "heroku"
 brew "doctl"
 brew "tldr"
-brew "terraform"
 EOS
 
 eval "$(nodenv init -)"
 echo Installing Node:
-nodenv install 8.16.2 --skip-existing
-nodenv install 9.11.2 --skip-existing
 nodenv install 10.17.0 --skip-existing
-nodenv install 11.15.0 --skip-existing
 nodenv install 12.13.1 --skip-existing
 nodenv install 13.2.0 --skip-existing
 
@@ -81,7 +71,6 @@ brew cask install adoptopenjdk8
 echo Installing storages:
 brew bundle --file=- <<-EOS
 brew "mongodb-community"
-brew "elasticsearch"
 brew "redis"
 EOS
 
@@ -106,11 +95,8 @@ EOS
 
 echo Installing Development Casks:
 brew cask install \
-  docker \
-  adoptopenjdk8 \
   visual-studio-code \
   gitkraken \
-  google-cloud-sdk \
   postman \
   robo-3t \
   sublime-text

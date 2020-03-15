@@ -17,27 +17,22 @@ brew cask install \
     iterm2 \
     menumeters \
     mounty \
-    qsync-client \
     rsyncosx \
     spotify \
-    the-unarchiver \
-    unified-remote
+    the-unarchiver
 
 echo Installing chat apps
-brew cask install \
-    slack \
+brew cask install \̦
     discord \
     telegram-desktop \
     whatsapp
 
 echo Installing browser and downloaders
 brew cask install \
-    firefox \
     google-chrome \
     jdownloader \
     megasync \
     qbittorrent \
-    google-backup-and-sync \
     send-anywhere
 
 echo Installing other apps

@@ -61,5 +61,6 @@
 	},
 	"macros": {
 		"format" : ["editor.action.formatDocument", "editor.action.selectAll", "wwm.aligncode"]
-	}
+	},
+	"todo-tree.tree.showScanModeButton": false
 }
