@@ -205,3 +205,5 @@ fi
 #   ---------------------------
 
 alias redmon='redis-cli monitor'                # showBlocked:  All ipfw rules inc/ blocked IPs
+
+PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
