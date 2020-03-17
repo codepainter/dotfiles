@@ -61,5 +61,9 @@
 	},
 	"macros": {
 		"format" : ["editor.action.formatDocument", "editor.action.selectAll", "wwm.aligncode"]
-	}
+	},
+	"aws.samcli.location": "/usr/local/bin/sam",
+	"go.useLanguageServer": true,
+	"todo-tree.tree.showScanModeButton": false,
+	"explorer.confirmDragAndDrop": false
 }

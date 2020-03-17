@@ -134,7 +134,7 @@ alias fix_stty='stty sane'                # fix_stty:     Restore terminal setti
 alias cic='set completion-ignore-case On' # cic:          Make tab-completion case-insensitive
 mcd() { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
 
-alias brewUpdate='brew update && brew upgrade && brew cleanup && upgrade_oh_my_zsh && nodenv rehash && pyenv rehash && goenv rehash'
+alias brewUpdate='brew update && brew upgrade && brew cleanup && upgrade_oh_my_zsh && nodenv rehash && pyenv rehash && goenv rehash && sz'
 alias burp='brewUpdate'
 
 ziptocbz() {
@@ -205,3 +205,8 @@ fi
 #   ---------------------------
 
 alias redmon='redis-cli monitor'                # showBlocked:  All ipfw rules inc/ blocked IPs
+export PATH="$PATH:/Users/user/flutter/bin"
+export ANDROID_SDK_ROOT="/Users/user/Library/Android/sdk"
+export ANDROID_HOME="/Users/user/Library/Android/sdk"
+
+PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
