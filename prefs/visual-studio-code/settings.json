@@ -65,5 +65,6 @@
 	"aws.samcli.location": "/usr/local/bin/sam",
 	"go.useLanguageServer": true,
 	"todo-tree.tree.showScanModeButton": false,
-	"explorer.confirmDragAndDrop": false
+	"explorer.confirmDragAndDrop": false,
+	"dart.flutterSdkPath": "/Users/user/flutter"
 }
