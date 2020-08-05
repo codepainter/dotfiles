@@ -104,17 +104,17 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias sz="source ~/.zshrc"
 alias shutdown='sudo shutdown -h now'
 
-alias cp='cp -iv'                         # Preferred 'cp' implementation
-alias mv='mv -iv'                         # Preferred 'mv' implementation
-alias mkdir='mkdir -pv'                   # Preferred 'mkdir' implementation
-alias ll='ls -FGlAhp'                     # Preferred 'ls' implementation
-alias llt='ll -t'                         # Preferred 'll -t' implementation
-alias lltr='ll -tr'                       # Preferred 'll -tr' implementation
-alias less='less -FSRXc'                  # Preferred 'less' implementation
+alias cp='cp -iv'        # Preferred 'cp' implementation
+alias mv='mv -iv'        # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'  # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'    # Preferred 'ls' implementation
+alias llt='ll -t'        # Preferred 'll -t' implementation
+alias lltr='ll -tr'      # Preferred 'll -tr' implementation
+alias less='less -FSRXc' # Preferred 'less' implementation
 cd() {
     builtin cd "$@"
     ll
-} # Always list directory contents upon 'cd'
+}                                         # Always list directory contents upon 'cd'
 alias cd..='cd ../'                       # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                         # Go back 1 directory level
 alias ...='cd ../../'                     # Go back 2 directory levels
@@ -133,6 +133,7 @@ alias show_options='shopt'                # Show_options: display bash options s
 alias fix_stty='stty sane'                # fix_stty:     Restore terminal settings when screwed up
 alias cic='set completion-ignore-case On' # cic:          Make tab-completion case-insensitive
 mcd() { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
+# wc() { find . -type f -name $1 | xargs wc -l; }
 
 alias brewUpdate='brew update && brew upgrade && brew cleanup && upgrade_oh_my_zsh && nodenv rehash && pyenv rehash && goenv rehash && sz'
 alias burp='brewUpdate'
@@ -204,7 +205,7 @@ fi
 #   6. DEVELOPMENT
 #   ---------------------------
 
-alias redmon='redis-cli monitor'                # showBlocked:  All ipfw rules inc/ blocked IPs
+alias redmon='redis-cli monitor' # showBlocked:  All ipfw rules inc/ blocked IPs
 export PATH="$PATH:/Users/user/flutter/bin"
 export ANDROID_SDK_ROOT="/Users/user/Library/Android/sdk"
 export ANDROID_HOME="/Users/user/Library/Android/sdk"

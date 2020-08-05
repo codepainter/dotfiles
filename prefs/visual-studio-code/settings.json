@@ -30,7 +30,7 @@
 	"window.nativeTabs"                    : false,
 	"window.title"                         : "${dirty} ${activeEditorMedium}${separator}${rootName}",
 	"window.zoomLevel"                     : 0,
-	"workbench.iconTheme"                  : "vscode-icons",
+	"workbench.iconTheme"                  : "material-icon-theme",
 	"workbench.sideBar.location"           : "right",
 	"workbench.statusBar.feedback.visible" : false,
 
@@ -38,7 +38,7 @@
 		"editor.defaultFormatter" : "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter" : "esbenp.prettier-vscode"
+		"editor.defaultFormatter" : "numso.prettier-standard-vscode"
 	},
 	"javascript.updateImportsOnFileMove.enabled" : "always",
 	"terraform.indexing"                         : {
@@ -48,8 +48,10 @@
 		"exclude"      : [".terraform/**/*", "**/.terraform/**/*"]
 	},
 	"terraform.languageServer": {
-		"enabled" : true,
-		"args"    : []
+		"external": true,
+		"args": [
+			"serve"
+		]
 	},
 	"git.autofetch"          : true,
 	"explorer.confirmDelete" : false,
@@ -66,5 +68,39 @@
 	"go.useLanguageServer": true,
 	"todo-tree.tree.showScanModeButton": false,
 	"explorer.confirmDragAndDrop": false,
-	"dart.flutterSdkPath": "/Users/user/flutter"
+	"dart.flutterSdkPath": "/Users/user/flutter",
+	"dart.openDevTools": "flutter",
+	"gitlab.instanceUrl": "https://git.dailyact.com",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"javascript.validate.enable": false,
+	"standard.autoFixOnSave": true,
+	"editor.tabSize": 2,
+	"editor.formatOnSave": true,
+	"mocha.files.glob": "src/**/*.spec.js",
+	"mocha.env": {
+		"Z":"Asia/Jakarta",
+		"API_VERSION":"news-f0.0.1",
+		"NAMESPACE":"news",
+		"APPID":27,
+		"PORT":3027,
+		"NODE_ENV": "local",
+		"NEWSAPI_KEY": "232c2e65130847b39576e6d0d9d75564",
+		"MONGODB_URI": "mongodb://localhost:27017/test",
+		"MONGODB_DB": "ms_news",
+		"SECRET":"p@ssw0rd",
+		"DEBUG": "callback:*,controllers:*,make:*,use-case:*,data-access:*,libraries:*"
+	},
+	"bookmarks.label.suggestion": "useWhenSelected",
+	"bookmarks.navigateThroughAllFiles": true,
+	"bookmarks.saveBookmarksInProject": true,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "numso.prettier-standard-vscode"
+	},
+	"typescript.tsserver.log": "verbose",
+	"typescript.updateImportsOnFileMove.enabled": "always"
 }

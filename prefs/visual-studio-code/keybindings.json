@@ -25,5 +25,35 @@
 	{
 		"key"     : "ctrl+d",
 		"command" : "workbench.action.files.save"
+	},
+	{
+		"key": "ctrl+alt+r",
+		"command": "editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+cmd+k",
+		"command": "bookmarks.toggleLabeled",
+		"when": "editorTextFocus"
 	}
 ]

@@ -1,3 +1,21 @@
+Host *.github.com
+  ServerAliveInterval 60
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/github
+
+Host gitlab.com
+  Preferredauthentications publickey
+  ServerAliveInterval 60
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/gitlab-personal
+
+# DailyAct GitLab instance
+Host git.dailyact.com
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/id_ed25519
+
 Host *
   ServerAliveInterval 60
   UseKeychain yes
