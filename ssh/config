@@ -4,6 +4,12 @@ Host *.github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/github
 
+Host *.linode.com
+  ServerAliveInterval 60
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/linode
+
 Host gitlab.com
   Preferredauthentications publickey
   ServerAliveInterval 60

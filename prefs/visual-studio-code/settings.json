@@ -29,8 +29,7 @@
 	"window.newWindowDimensions"           : "inherit",
 	"window.nativeTabs"                    : false,
 	"window.title"                         : "${dirty} ${activeEditorMedium}${separator}${rootName}",
-	"window.zoomLevel"                     : 0,
-	"workbench.iconTheme"                  : "material-icon-theme",
+	"window.zoomLevel": 0,
 	"workbench.sideBar.location"           : "right",
 	"workbench.statusBar.feedback.visible" : false,
 
@@ -102,5 +101,8 @@
 		"editor.defaultFormatter": "numso.prettier-standard-vscode"
 	},
 	"typescript.tsserver.log": "verbose",
-	"typescript.updateImportsOnFileMove.enabled": "always"
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"git.confirmSync": false,
+	"guides.enabled": false,
+	"workbench.iconTheme": "vscode-icons"
 }

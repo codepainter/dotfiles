@@ -211,3 +211,6 @@ export ANDROID_SDK_ROOT="/Users/user/Library/Android/sdk"
 export ANDROID_HOME="/Users/user/Library/Android/sdk"
 
 PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+
+# 10551* 2020-09-03 09:15  find . -name "node_modules" -type d -prune | xargs du -chs
+# 10552* 2020-09-03 09:15  find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
