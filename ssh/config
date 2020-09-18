@@ -1,19 +1,16 @@
 Host *.github.com
   ServerAliveInterval 60
-  UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/github
 
 Host *.linode.com
   ServerAliveInterval 60
-  UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/linode
 
 Host gitlab.com
   Preferredauthentications publickey
   ServerAliveInterval 60
-  UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/gitlab-personal
 
@@ -24,7 +21,6 @@ Host git.dailyact.com
 
 Host *
   ServerAliveInterval 60
-  UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
 
